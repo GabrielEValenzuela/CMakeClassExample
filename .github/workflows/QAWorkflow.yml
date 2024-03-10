@@ -17,12 +17,11 @@ jobs:
           submodules: recursive
 
       - name: Install dependencies
-      - uses: actions/checkout@v2
-      - uses: awalsh128/cache-apt-pkgs-action@latest
+        uses: actions/checkout@v2
+        uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: doxygen gcovr lcov cppcheck valgrind graphviz clang-format
           version: 1.0
 
       - name: Build project
         uses: ./.github/actions/building
-
