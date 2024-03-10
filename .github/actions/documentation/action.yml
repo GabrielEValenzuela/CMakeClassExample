@@ -19,7 +19,7 @@ runs:
           # ToDo: Add documentation about this command and describe better
           sudo dot -c
 
-          ERROR_FILE_FLAG=$(pwd)/ci/error_flag.txt
+          ERROR_FILE_FLAG=$(pwd)/ci/dox_errors.txt
 
           # ToDo: Add documentation and describe better this command
           DOXYGEN_COMMAND=$(doxygen -s $DOX_CONF_FILE) 2> $ERROR_FILE_FLAG
@@ -32,9 +32,9 @@ runs:
               exit 0
           fi
     # Upload errors as an artifact, when failed
-      - uses: actions/upload-artifact@v3
-        if: failure()
-        with:
-          name: Doxygen errors!!!
-          path: $(pwd)/ci/error_flag.txt
-          retention-days: 1
+    - uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+        name: Doxygen errors!!!
+        path: $(pwd)/ci/dox_errors.txt
+        retention-days: 1

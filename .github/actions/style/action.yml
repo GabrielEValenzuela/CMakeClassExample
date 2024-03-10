@@ -12,7 +12,7 @@ runs:
           # ToDo: Add documentation about 'tr' command and describe better this command
           SOURCE_FILES=$(find $PROJECT_PATH -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
 
-          ERROR_FILE_FLAG=$PROJECT_PATH/ci/error_flag.txt
+          ERROR_FILE_FLAG=$PROJECT_PATH/ci/clang-format_errors.txt
 
           # ToDo: Add documentation and describe better this command
           CLANG_COMMAND=$(clang-format --dry-run -i $SOURCE_FILES) 2> $ERROR_FILE_FLAG
@@ -25,9 +25,9 @@ runs:
               exit 0
           fi
     # Upload errors as an artifact, when failed
-      - uses: actions/upload-artifact@v3
-        if: failure()
-        with:
-          name: Clang-format errors!!!
-          path: $PROJECT_PATH/ci/error_flag.txt
-          retention-days: 1
+    - uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+        name: Clang-format errors!!!
+        path: $PROJECT_PATH/ci/clang-format_errors.txt
+        retention-days: 1
