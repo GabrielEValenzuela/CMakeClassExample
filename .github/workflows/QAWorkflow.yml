@@ -30,3 +30,6 @@ jobs:
 
       - name: Run documentation check
         uses: ./.github/actions/documentation
+
+      - name: Run tests and coverage
+        uses: ./.github/actions/coverage_and_test
