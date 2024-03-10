@@ -5,6 +5,7 @@ runs:
   using: "composite"
   steps:
     - name: "Run doxygen command"
+      shell: bash
       run: |
           # We only make check, not changes
           DOX_CONF_FILE=$(pwd)/Doxyfile

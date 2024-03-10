@@ -27,8 +27,6 @@ jobs:
 
       - name: Run style check
         uses: ./.github/actions/style
-        shell: bash
 
       - name: Run documentation check
         uses: ./.github/actions/documentation
-        shell: bash

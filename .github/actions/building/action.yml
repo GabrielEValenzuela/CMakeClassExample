@@ -5,6 +5,7 @@ runs:
   using: "composite"
   steps:
       - name: Compile
+        shell: bash
         run: |
           SRC_FOLDER=$(pwd)/src
 
@@ -12,4 +13,3 @@ runs:
           cmake -DSRC_FOLDER=${SRC_FOLDER} -DRUN_COVERAGE=1 .. && make -j2
 
           echo "Running command: cmake -DSRC_FOLDER=${SRC_FOLDER} -GNinja -DRUN_COVERAGE=1 .. && ninja"
-        shell: bash

@@ -5,6 +5,7 @@ runs:
   using: "composite"
   steps:
     - name: "Run clang-format"
+      shell: bash
       run: |
           # We only make check, not changes
           # Use the find command with the variable
