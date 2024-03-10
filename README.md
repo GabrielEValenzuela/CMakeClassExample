@@ -1,1 +1,1 @@
-[![QA Workflow](https://github.com/GabrielEValenzuela/CMakeClassExample/actions/workflows/QAWorkflow.yml/badge.svg?event=status)](https://github.com/GabrielEValenzuela/CMakeClassExample/actions/workflows/QAWorkflow.yml)
+[![QA Workflow](https://github.com/GabrielEValenzuela/CMakeClassExample/actions/workflows/QAWorkflow.yml/badge.svg?branch=master)](https://github.com/GabrielEValenzuela/CMakeClassExample/actions/workflows/QAWorkflow.yml)
