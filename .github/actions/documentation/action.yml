@@ -20,7 +20,7 @@ runs:
           # ToDo: Add documentation about this command and describe better
           sudo dot -c
 
-          ERROR_FILE_FLAG=$(pwd)/ci/dox_errors.txt
+          ERROR_FILE_FLAG=$(pwd)/dox_errors.txt
 
           # ToDo: Add documentation and describe better this command
           DOXYGEN_COMMAND=$(doxygen -s $DOX_CONF_FILE) 2> $ERROR_FILE_FLAG
@@ -37,5 +37,5 @@ runs:
       if: failure()
       with:
         name: Doxygen errors!!!
-        path: $(pwd)/ci/dox_errors.txt
+        path: $(pwd)/dox_errors.txt
         retention-days: 1

@@ -18,7 +18,7 @@ runs:
         SOURCE_FILES+=$(find $PROJECT_PATH/include -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
         SOURCE_FILES+=$(find $PROJECT_PATH/lib -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
 
-        ERROR_FILE_FLAG=$PROJECT_PATH/ci/clang-format_errors.txt
+        ERROR_FILE_FLAG=$PROJECT_PATH/clang-format_errors.txt
 
         # ToDo: Add documentation and describe better this command
         CLANG_COMMAND=$(clang-format -i $SOURCE_FILES) 2> ${ERROR_FILE_FLAG}
@@ -38,5 +38,5 @@ runs:
       if: failure()
       with:
         name: Clang-format errors!!!
-        path: $PROJECT_PATH/ci/clang-format_errors.txt
+        path: $PROJECT_PATH/clang-format_errors.txt
         retention-days: 1
