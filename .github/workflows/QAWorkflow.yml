@@ -1,0 +1,22 @@
+name: QA Workflow
+
+on:
+  workflow_dispatch:
+  pull_request:
+    # Pull request events, only ready for review!
+    types: [ready_for_review]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Build project
+        uses: ./.github/actions/building
+        with:
+          path: ./src
