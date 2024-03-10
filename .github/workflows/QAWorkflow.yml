@@ -24,3 +24,9 @@ jobs:
 
       - name: Build project
         uses: ./.github/actions/building
+
+      - name: Run style check
+        uses: ./.github/actions/style
+
+      - name: Run documentation check
+        uses: ./.github/actions/documentation
