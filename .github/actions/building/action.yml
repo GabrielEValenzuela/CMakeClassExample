@@ -10,4 +10,6 @@ runs:
 
           mkdir -p build && cd build
           cmake -DSRC_FOLDER=${SRC_FOLDER} -DRUN_COVERAGE=1 .. && make -j2
+
+          echo "Running command: cmake -DSRC_FOLDER=${SRC_FOLDER} -DRUN_COVERAGE=1 .. && make -j2"
         shell: bash
