@@ -17,9 +17,7 @@ jobs:
           submodules: recursive
 
       - name: Install deps
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y cmake clang-format lcov gcovr cppcheck valgrind doxygen graphviz
+        uses: ./.github/actions/deps
 
       - name: Build project
         uses: ./.github/actions/building

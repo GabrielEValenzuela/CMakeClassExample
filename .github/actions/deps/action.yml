@@ -1,0 +1,11 @@
+name: "Install dependencies"
+description: "Run cached deps."
+
+runs:
+  using: "composite"
+  steps:
+  - name: "Install deps"
+      uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: gcovr lcov cppcheck valgrind doxygen graphviz clang-format
+          version: 1.0
