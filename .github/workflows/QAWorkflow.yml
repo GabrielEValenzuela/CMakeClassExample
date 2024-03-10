@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: doxygen gcovr lcov cppcheck graphviz clang-format valgrind
+          packages: doxygen gcovr lcov cppcheck graphviz clang-format valgrind bc
           version: 1.0
 
       - name: Build project
