@@ -18,5 +18,4 @@ jobs:
 
       - name: Build project
         uses: ./.github/actions/building
-        with:
-          path: ./src
+
