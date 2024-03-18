@@ -9,9 +9,6 @@
 *.a
 *.so
 
-# Disable for now
-*.cmake
-
 # Build directory
 /build/
 
@@ -27,3 +24,4 @@
 
 # Dont track sonnar files
 .scannerwork/
+
